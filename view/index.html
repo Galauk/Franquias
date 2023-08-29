@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+    <head>
+        <title>{NOME_PROJETO}</title>
+        <link href="{URL_ADMIN}/assets/css/estilo.css" type="text/css" rel="stylesheet">
+        <link href="{URL_ADMIN}/assets/css/all.min.css" type="text/css" rel="stylesheet">
+        <link href="{URL_ADMIN}/assets/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+        <link href="{URL_ADMIN}/assets/css/bootstrap-grid.css" type="text/css" rel="stylesheet">
+        <link href="{URL_ADMIN}/assets/css/style.css" type="text/css" rel="stylesheet">
+    </head>
+    <body>
+        <div align="center" class="todo">
+            <div class="container">
+                <div class="row">
+                    <div class="col-2"><img class="float-left" src="{URL_ADMIN}/assets/img/logo.png"></div>
+                    <div class="col"></div>
+                    <div class="col-2 text-right">
+                        <a href="{URL_ADMIN}/login.php" title="Sair do sistema"><i class="fa fa-sign-out-alt"></i></a>
+                    </div>
+                </div>
+                <div class="row">
+                    <br>
+                </div>
+                <div class="row">
+                    <div class="col text-left">
+                        <ul class="nav nav-pills nav-justified">
+                            <!-- BEGIN ADMIN -->
+                            <li class="nav-item"><a class="nav-link" href="{URL_ADMIN}"><i class="fa fa-home"></i><br>Principal</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{URL_ADMIN}/produto"><i class="fa fa-box"></i><br>Produto</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{URL_ADMIN}/plano"><i class="fa fa-boxes"></i><br>Planos</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{URL_ADMIN}/franquia"><i class="fa fa-store-alt"></i><br>Franquias</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{URL_ADMIN}/vendedor"><i class="fa fa-suitcase"></i><br>Vendedores</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{URL_ADMIN}/fatura"><i class="fa fa-file-invoice-dollar"></i><br>Fatura</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{URL_ADMIN}/compra"><i class="fa fa-shopping-bag"></i><br>Vendas</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{URL_ADMIN}/treinamento"><i class="fa fa-graduation-cap"></i><br>Treinamento</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{URL_ADMIN}/avisos"><i class="fa fa-bell"></i><br>Avisos</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{URL_ADMIN}/arquivo"><i class="fa fa-file"></i><br>Arquivos</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{URL_ADMIN}/relatorio"><i class="fa fa-chart-bar"></i><br>Relatorios</a></li>
+                            <!-- END ADMIN -->
+                            <!-- BEGIN FRANQ -->
+                            <li class="nav-item"><a class="nav-link" href="{URL_ADMIN}"><i class="fa fa-home"></i><br>Principal</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{URL_ADMIN}/vendedor"><i class="fa fa-suitcase"></i><br>Vendedores</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{URL_ADMIN}/compra"><i class="fa fa-shopping-bag"></i><br>Vendas</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{URL_ADMIN}/treinamento"><i class="fa fa-graduation-cap"></i><br>Treinamento</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{URL_ADMIN}/arquivo"><i class="fa fa-file"></i><br>Arquivos</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{URL_ADMIN}/fatura"><i class="fa fa-file-invoice-dollar"></i><br>Fatura</a></li>
+                            <!-- END FRANQ -->
+                            <!-- BEGIN VEND -->
+                            <li class="nav-item"><a class="nav-link" href="{URL_ADMIN}"><i class="fa fa-home"></i><br>Principal</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{URL_ADMIN}/compra"><i class="fa fa-shopping-bag"></i><br>Vendas</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{URL_ADMIN}/treinamento"><i class="fa fa-graduation-cap"></i><br>Treinamento</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{URL_ADMIN}/arquivo"><i class="fa fa-file"></i><br>Arquivos</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{URL_ADMIN}/fatura"><i class="fa fa-file-invoice-dollar"></i><br>Fatura</a></li>
+                            <!-- END VEND -->
+                        </ul>
+            
+                    </div>
+                </div>
+                <!-- BEGIN PENDENCIAS -->
+                <div class="row">
+                    <div class="col text-left error">
+                        <span style="font-size:16px;color:black;"><i class="fa fa-exclamation-circle"></i>&nbsp;Foi identificado pendências com a sua franquia, favor entrar em contato com a franquiadora.</span>
+                    </div>
+                </div>
+                <!-- END PENDENCIAS -->
+                <div class="row">
+                    <div class="col text-left">
+                        {INCLUDE_PG}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col text-left">Painel de Franquias Sounet</div>
+                    <div class="col text-right">Desenvolvido por Sounet</div>
+                </div>
+            </div>
+            <!--
+                Bem vindo {USER}
+                Nivel: {NIVEL}<br>
+                Ultimo login:  {lastLogin}
+            -->
+        </div>
+        <script src="{URL_ADMIN}/assets/js/all.min.js"></script>
+        <script src="{URL_ADMIN}/assets/js/tether.min.js"></script>
+        <script src="{URL_ADMIN}/assets/js/bootstrap.min.js"></script>
+    </body>
+</html>

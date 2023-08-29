@@ -1,0 +1,163 @@
+<div class="title">
+    Venda
+</div>
+<!-- BEGIN ADICIONAVENDA -->
+<div align="right">
+    <a href="{URL_ADMIN}/compra/adicionar"><i class="fa fa-plus-square" style="font-size: 30px"></i></a>
+</div>
+<!-- END ADICIONAVENDA -->
+<form action="#" method="POST" class="filtro">
+    <div class="row">
+        <!-- BEGIN FILTRODATA -->
+        <div class="col">
+            <span>Data:</span>
+            <input type="date" name="datainicio" value="{datainicio}">
+            até
+            <input type="date" name="datafim" value="{datafim}">
+        </div>
+        <!-- END FILTRODATA -->
+    </div>
+    <div class="row">
+        <div class="col">
+            <span>Franquia: </span>
+            <select name="franquia">
+                <!-- BEGIN SELECTFRANQ -->
+                <option value="{idFranq}">{nomeFranq}</option>
+                <!-- END SELECTFRANQ -->
+            </select>
+        </div>
+        <div class="col">
+            <span>Vendedor: </span>
+            <select name="vendedor">
+                    <!-- BEGIN SELECTVEND -->
+                <option value="{idVend}">{nomeVend}</option>
+                <!-- END SELECTVEND -->
+            </select>
+        </div>
+    </div>
+    <div class="row">
+
+        <!-- BEGIN FILTROPLAN -->
+        <div class="col">
+            <span>Plano: </span>
+            <select name="plano">
+                <option value="">Todos</option>
+                <!-- BEGIN SELECT_PLAN_FILTER -->
+                <option value="{planid}">{plan}</option>
+                <!-- END SELECT_PLAN_FILTER -->
+            </select>
+        </div>
+        <!-- END FILTROPLAN -->
+        <!-- BEGIN FILTROPGTO -->
+        <div class="col">
+            <span>Status de Pagamento: </span>
+            <select name="statuspgto">
+                <option value="">Todos</option>
+                <option value="pending">Pendente</option>
+                <option value="paid">Pago</option>
+                <option value="expired">Expirada</option>
+                <option value="canceled">Cancelada</option>
+                <option value="refunded">Reembolsado</option>
+            </select>
+        </div>
+        <!-- END FILTROPGTO -->
+    </div>
+    <div class="row">
+        <!-- BEGIN FILTROCLIENTE -->
+        <div class="col">
+            <span>Nome do cliente: </span>
+            <input type="text" name="cliente" class="t3">
+        </div>
+        <!-- END FILTROCLIENTE -->
+        <!-- BEGIN FILTRORENOVACAO -->
+        <div class="col">
+            <span>Renovação: </span>
+            <select name="renovacao">
+                <option value="">Todos</option>
+                <option value="1">Não</option>
+                <option value="2">Sim</option>
+            </select>
+        </div>
+        <!-- END FILTRORENOVACAO -->
+    </div>
+    <div class="row">
+        <!-- BEGIN DATARENOVACAO -->
+        <div class="col">
+            <span>Dias para renovação: </span>
+            <select name="datarenovacao">
+                <option value="">Todos</option>
+                <option value="1">1-10 dias</option>
+                <option value="2">10-20 dias</option>
+                <option value="3">20-30 dias</option>
+                <option value="4">Expirados</option>
+                <option value="5">30 dias para renovação</option>
+            </select>
+        </div>
+        <!-- END DATARENOVACAO -->
+    </div>
+    <div class="row">
+        <div class="col text-right">
+            <input type="hidden" name="action" value="filtro">
+            <input type="image" src="{URL_ADMIN}/assets/img/view.png">
+        </div>
+    </div>
+</form>
+<div class="row justify-content-center">
+    <div class="col-2">
+        Total: R$ {total}
+    </div>
+</div>
+<div align="center">
+    <table cellspacing="0" cellpadding="0" width="100%">
+        <tr>
+            <th>Franquia</th>
+            <th>Vendedor</th>
+            <th>Produto</th>
+            <th>Valor</th>
+            <th>Status</th>
+            <th>Cliente</th>
+            <th>Renovação</th>
+            <th>Dias para renovar</th>
+            <th>Hora / Data</th>
+            <th>Opções</th>
+        </tr>
+        <!-- BEGIN VAZIO -->
+        <tr>
+            <td colspan="11">Nenhum registro encontrado.</td>
+        </tr>
+        <!-- END VAZIO -->
+        <!-- BEGIN REPETE -->
+        <tr>
+            <td class="{css}">{franquia}</td>
+            <td class="{css}">{vendedor}</td>
+            <td class="{css}">{produto}</td>
+            <td class="{css}">R$ {valor}</td>
+            <td class="{css}">{status}</td>
+            <td class="{css}">{cliente}</td>
+            <td class="{css}">{renovacao}</td>
+            <td class="{css}">{restante}</td>
+            <td class="{css}">{data}</td>
+            <td class="{css}">
+                <a href="{URL_ADMIN}/compra/dados/{id}"><i class="fa fa-edit"></i></a>
+            </td>
+        </tr>
+        <!-- END REPETE -->
+        <!-- BEGIN REPETE2 -->
+        <tr>
+            <td class="{css}">{franquia}</i></td>
+            <td class="{css}">{vendedor}</td>
+            <td class="{css}">{produto}</td>
+            <td class="{css}">R$ {valor}</td>
+            <td class="{css}">{status}</td>
+            <td class="{css}">{cliente}</td>
+            <td class="{css}">{renovacao}</td>
+            <td class="{css}">{restante}</td>
+            <td class="{css}">{data}</td>
+            <td class="{css}">
+                <a href="{URL_ADMIN}/compra/edit/{id}" title="Editar"><i class="fa fa-edit"></i></a>
+                <a href="{URL_ADMIN}/compra/expi/{id}" title="Expirar"><i class="fa fa-calendar-times"></i></a>
+            </td>
+        </tr>
+        <!-- END REPETE2 -->
+    </table>
+</div>

@@ -1,0 +1,29 @@
+<script>
+    function valida(){
+        var valor = document.getElementById('motivo').value;
+        if(valor == ''){
+            return false;
+        }
+        return true;
+    }
+</script>
+<section>
+    <form action="" method="POST" enctype="multipart/form-data" onsubmit="valida();">
+        <div class="row">
+            <div class="col">
+                <label>Motivo para expirar compra?</label>
+                <textarea name="motivo" id="motivo"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <a onclick="javasckript:history.back();" style="cursor: pointer;"><img src="{URL_ADMIN}/assets/img/back.png"></a>
+            </div>
+            <div class="col text-right">
+                <input type="hidden" name="codigo" value="{codigo}">
+                <input type="hidden" name="action" value="ExpComp">
+                <input type="image" src="{URL_ADMIN}/assets/img/save.png">
+            </div>
+        </div>
+    </form>
+</section>

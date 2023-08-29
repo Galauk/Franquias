@@ -1,0 +1,74 @@
+<script>
+    function validaForm(){
+        if(document.getElementById('codFranquia').value == ""){
+            alert("Selecione a Franquia do vendedor.");
+            document.getElementById('codFranquia').focus();
+            return false;
+        }
+        if(document.getElementById('nome').value == ""){
+            alert("Preencha o nome do vendedor.");
+            document.getElementById('nome').focus();
+            return false;
+        }
+        if(document.getElementById('cpf').value == ""){
+            alert("Preencha o CPF do vendedor.");
+            document.getElementById('cpf').focus();
+            return false;
+        }
+        if(document.getElementById('email').value == ""){
+            alert("Preencha o e-mail do vendedor.");
+            document.getElementById('email').focus();
+            return false;
+        }
+        if(document.getElementById('login').value == ""){
+            alert("Preencha o Login do vendedor.");
+            document.getElementById('login').focus();
+            return false;
+        }
+        if(document.getElementById('senha').value == ""){
+            alert("Preencha a senha do vendedor.");
+            document.getElementById('senha').focus();
+            return false;
+        }
+        return true;
+    }
+</script>
+<div>
+    <div class="title">Adicionar Vendedor</div>
+    <form action="#" method="POST" enctype="multipart/form-data" onsubmit="return validaForm();" class="filtro">
+        <div>
+            <span>Franquia: </span>
+            <select name="codFranquia" id="codFranquia">
+                <option disabled selected value=""> Selecione</option>
+                <!-- BEGIN FOREACH -->
+                <option value="{id}">{franquia}</option>
+                <!-- END FOREACH -->
+            </select>
+        </div>
+        <div>
+            <span>Nome: </span>
+            <input type="text" name="nome" id="nome">
+        </div>
+        <div>
+            <span>CPF: </span>
+            <input type="text" name="cpf" id="cpf">
+        </div>
+        <div>
+            <span>E-mail: </span>
+            <input type="text" name="email" id="email">
+        </div>
+        <div>
+            <span>Login: </span>
+            <input type="text" name="login" id="login">
+        </div>
+        <div>
+            <span>Senha: </span>
+            <input type="password" name="senha" id="senha">
+        </div>
+        <div>
+            <input type="hidden" name="action" value="reg">
+            <a href="{URL_ADMIN}/vendedor"><img src="{URL_ADMIN}/assets/img/cancel.png"></a>
+            <input type="image" src="{URL_ADMIN}/assets/img/save.png" class="save" alt="salvar">
+        </div>
+    </form>
+</div>

@@ -1,0 +1,73 @@
+<script>
+    function ValidaForm(){
+        if(document.getElementById('login').value == ""){
+            alert("Preencha o login da Franquia.");
+            document.getElementById('login').focus();
+            return false;
+        }
+        if(document.getElementById('senha').value == ""){
+            alert("Preencha a senha da Franquia.");
+            document.getElementById('senha').focus();
+            return false;
+        }
+        return true;
+    }
+</script>
+<div>
+    <form action="#" method="POST" onsubmit="return ValidaForm();">
+        <div>
+            <span>Nome: </span>
+            {nome}
+        </div>
+        <div>
+            <span>Razão Social: </span>
+            {razao}
+        </div>
+        <div>
+            <span>CNPJ: </span>
+            {cnpj}
+        </div>
+        <div>
+            <span>Endereco: </span>
+            {endereco}
+        </div>
+        <div>
+            <span>Estado: </span>
+            {estado}
+        </div>
+        <div>
+            <span>Cidade: </span>
+            {cidade}
+        </div>
+        <div>
+            <span>Responsavel: </span>
+            {responsavel}
+        </div>
+        <div>
+            <span>Contato: </span>
+            {contato}
+        </div>
+        <div>
+            <span>Celular: </span>
+            {celular}
+        </div>
+        <div>
+            <span>Login: </span>
+            <input type="text" name="login" id="login" value="{login}">
+        </div>
+        <div>
+            <span>Senha: </span>
+            <input type="password" name="senha" id="senha">
+        </div>
+        <div>
+            <span>Pontos de Acesso: </span>
+            {qtAcesso}
+        </div>
+        <div>
+            <input type="hidden" name="id" value="{id}">
+            <input type="hidden" name="action" value="editFranq">
+            <a href="{URL_ADMIN}/franquia"><img src="{URL_ADMIN}/assets/img/cancel.png"></a>
+            <input type="image" src="{URL_ADMIN}/assets/img/save.png" class="save" alt="salvar">
+        </div>
+    </form>
+</div>

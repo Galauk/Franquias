@@ -1,0 +1,49 @@
+<script>
+    function ValidaForm(){
+        if(document.getElementById('login').value == ""){
+            alert("Preencha o login da Franquia.");
+            document.getElementById('login').focus();
+            return false;
+        }
+        if(document.getElementById('senha').value == ""){
+            alert("Preencha a senha da Franquia.");
+            document.getElementById('senha').focus();
+            return false;
+        }
+        return true;
+    }
+</script>
+<div>
+    <form action="#" method="POST" onsubmit="return validaForm();">
+        <div>
+            <span>Franquia: </span>
+            {franquia}
+        </div>
+        <div>
+            <span>Nome: </span>
+            {nome}
+        </div>
+        <div>
+            <span>CPF: </span>
+            {cpf}
+        </div>
+        <div>
+            <span>E-mail: </span>
+            {email}
+        </div>
+        <div>
+            <span>Login: </span>
+            <input type="text" name="login" id="login" value="{login}">
+        </div>
+        <div>
+            <span>Senha: </span>
+            <input type="password" name="senha" id="senha">
+        </div>
+        <div>
+            <input type="hidden" name="id" value="{id}">
+            <input type="hidden" name="action" value="edit">
+            <a href="{URL_ADMIN}/vendedor"><img src="{URL_ADMIN}/assets/img/cancel.png"></a>
+            <input type="image" src="{URL_ADMIN}/assets/img/save.png" class="save" alt="salvar">
+        </div>
+    </form>
+</div>

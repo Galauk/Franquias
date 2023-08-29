@@ -1,0 +1,294 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: #477fae;
+}
+
+h2 {
+    font-size: 14px;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+
+.none{
+    display: none;
+}
+
+.todo .container {
+    background-color: #FFFFFF;
+}
+
+.resumo {
+    background-color: #01338a;
+    color: #FFFFFF;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+}
+
+.nav-item {
+    background-color: #003b5d;
+    border-radius: 5px;
+    margin: 5px;
+}
+.nav-item a{
+    color:#FFFFFF;
+}
+.nav-item a:hover{
+    color:#83b1ff;
+}
+
+
+.content {
+    width: 964px;
+    display: block;
+}
+.top {
+    background-image: url("../img/top.jpg");
+    background-repeat: repeat-x;
+    height: 136px;
+}
+
+.top .content {
+    position: relative;
+}
+
+.top .user {
+    background-image: url("../img/top_user.jpg");
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 173px;
+    height: 53px;
+    right: 0px;
+    top: 25px;
+    padding: 10px;
+    padding-left: 60px;
+    color: #FFFFFF;
+    text-align: left;
+    font-size: 12px;
+}
+
+.top .user a {
+    text-decoration: none;
+    color: #d2ca45;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.mainTop {
+    background-image: url("../img/bg_top.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 16px;
+}
+
+form div {
+    font-size: 12px;
+    padding-bottom: 10px; 
+}
+form span {
+    width: 150px;
+    display: inline-block;
+    font-size: 12px !important;
+}
+
+form input.save {
+    height: 24px;
+    cursor: pointer;
+    float: right;
+}
+
+form input {
+    height: 20px;
+}
+
+form input.t05 {
+    width: 50px;
+}
+
+form input.t1 {
+    width: 100px;
+}
+
+form input.t2 {
+    width: 200px;
+}
+
+form input.t3 {
+    width: 300px;
+}
+
+form input.t4 {
+    width: 400px;
+}
+
+form input.t5 {
+    width: 500px;
+}
+
+form input.t6 {
+    width: 600px;
+}
+
+form select {
+    height: 20px;
+    width: 130px;
+}
+
+form textarea {
+    width: 100%;
+    height: 100px;
+}
+
+form.filtro {
+    background-color: #003b5d;
+    color: #FFFFFF
+}
+form.filtro input[type=text],
+form.filtro input[type=password],
+form.filtro input[type=date],
+form.filtro input[type=number] {
+    border-radius: 5px;
+    height: 25px;
+    border: 1px grey solid;
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+form.filtro select {
+    height: 25px;
+    border-radius: 5px;
+    border: 1px grey solid;
+    background-color: #FFFFFF;
+    width: auto;
+}
+
+form.filtro span {
+    margin-right: 5px;
+    width: auto;
+    display: inline-block;
+    font-size: 14px !important;
+}
+
+
+table {
+    border: none;
+}
+
+table th {
+    height: 25px;
+    font-weight: bold;
+}
+
+table td {
+    padding: 5px;
+    text-align: center;
+}
+
+table td.alt {
+    background-color: #ededed;
+    padding: 5px;
+    text-align: center;
+}
+
+
+.title {
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #C3C3C3;
+    text-align: left;
+    padding: 3px;
+    border-radius: 5px;
+    margin-bottom: 5px; 
+}
+
+.buttons {
+}
+
+a.button {
+    float: right;
+}
+
+.filtro {
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.main-content {
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+
+.f12 {
+    font-size: 12px;
+}
+.f14 {
+    font-size: 14px;
+}
+.f16 {
+    font-size: 16px;
+}
+.f18 {
+    font-size: 18px;
+}
+.f20 {
+    font-size: 20px;
+}
+.f22 {
+    font-size: 22px;
+}
+
+.aberto {
+    background-color: #999999 !important;
+    border-bottom: 1px solid #BBBBBB !important;
+}
+
+.fechado {
+    background-color: #DDDDDD ;
+    padding: 5px;
+    border:1px solid Grey;
+}
+.subaberto{
+    background-color: #DDDDDD ;
+    padding: 5px;
+    border-top: none;
+    border: 1px solid Grey;
+
+}
+.sucess {
+    background-color: #cce297;
+    border: 1px solid #b3d952;
+    border-radius: 5px;
+    padding: 5px;
+    color: #37570c;
+    font-weight: 500;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+.error {
+    background-color:#e7928d;
+    border: 1px solid #cc2421;
+    border-radius: 5px;
+    padding: 5px;
+    color: #bc333a;
+    font-weight: 500;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.red {
+    color: red !important;
+}
+.green {
+    color: green !important;
+}

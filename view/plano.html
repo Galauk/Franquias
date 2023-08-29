@@ -1,0 +1,88 @@
+<div class="title">
+    Plano
+</div>
+<div class="buttons">
+    <a class="button" href="{URL_ADMIN}/plano/adicionar"><i class="fa fa-plus-square" style="font-size: 30px"></i></a>
+</div>
+<br>
+{error}
+<div>
+    {sucesso}
+</div>
+<!-- BEGIN EDITA_PLANO -->
+<form action="" method="POST" class="filtro">
+    <div>
+        <span>Nome: </span>
+        <input type="text" name="nome" value="{nome}">
+    </div>
+    <div>
+        <span>Produto: </span>
+        <select name="produto">
+            <!-- BEGIN REPETEPRODUTO -->
+            <option value="{produtoValue}" {select}>{produto}</option>
+            <!-- END REPETEPRODUTO -->
+        </select>
+    </div>
+    <div>
+        <span>Identificador:</span>
+        <input type="text" name="identificador" class="t3" value="{identificador}">
+    </div>
+    <div>
+        <span>Codigo:</span>
+        <input type="text" name="codigo" class="t3" value="{codigo}">
+    </div>
+    <div>
+        <span>Valor: </span>
+        <input type="text" name="valor" class="t05" value="{valor}">
+    </div>
+    <div>
+        <span>Comissão: </span>
+        <input type="text" name="comissao" class="t05" value="{comissao}">
+    </div>
+    <div>
+        <span>Comissão pela renovação: </span>
+        <input type="text" name="renovacao" class="t05" value="{renovacao}">
+    </div>
+    <div>
+        <!-- BEGIN IDPLANO -->
+        <input type="hidden" name="id" value="{id}">
+        <!-- END IDPLANO -->
+        <input type="hidden" name="action" value="regPlan">
+        <a href="{URL_ADMIN}/plano"><img src="{URL_ADMIN}/assets/img/cancel.png"></a>
+        <input type="image" src="{URL_ADMIN}/assets/img/save.png" class="save" alt="salvar">
+    </div>
+</form>
+<!-- END EDITA_PLANO -->
+<!-- BEGIN LISTA_PLANO -->
+<div align="center">
+    <table cellspacing="0" cellpadding="0" width="100%">
+        <tr>
+            <th>Nome</th>
+            <th>Produto</th>
+            <th>Identificador</th>
+            <th>Valor</th>
+            <th>Comissão</th>
+            <th>Renovações</th>
+            <th>Opções</th>
+        </tr>
+        <!-- BEGIN VAZIO -->
+        <tr>
+            <td colspan="6">Nenhum registro encontrado.</td>
+        </tr>
+        <!-- END VAZIO -->
+        <!-- BEGIN FOREACH -->
+        <tr>
+            <td class="{css}">{nome}</td>
+            <td class="{css}">{produto}</td>
+            <td class="{css}">{identificador}</td>
+            <td class="{css}">{valor}</td>
+            <td class="{css}">{comissao}</td>
+            <td class="{css}">{renovacao}</td>
+            <td class="{css}">
+                <a href="{URL_ADMIN}/plano/editar/{id}"><i class="fa fa-edit"></i></a>
+            </td>
+        </tr>
+        <!-- END FOREACH -->
+    </table>
+</div>
+<!-- END LISTA_PLANO -->

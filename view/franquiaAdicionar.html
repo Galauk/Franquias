@@ -1,0 +1,78 @@
+<script>
+    function ValidaForm(){
+        if(document.getElementById('nome').value == ""){
+            alert("Preencha o nome da Franquia.");
+            document.getElementById('nome').focus();
+            return false;
+        }
+        if(document.getElementById('login').value == ""){
+            alert("Preencha o login da Franquia.");
+            document.getElementById('login').focus();
+            return false;
+        }
+        if(document.getElementById('senha').value == ""){
+            alert("Preencha a senha da Franquia.");
+            document.getElementById('senha').focus();
+            return false;
+        }
+        return true;
+    }
+</script>
+<div>
+    <div class="title">Adicionar Franquia</div>
+    <form action="#" method="POST" enctype="multipart/form-data" onsubmit="return ValidaForm();" class="filtro">
+        <div>
+            <span>Nome: </span>
+            <input type="text" name="nome" id="nome">
+        </div>
+        <div>
+            <span>Razão Social: </span>
+            <input type="text" name="razao">
+        </div>
+        <div>
+            <span>CNPJ: </span>
+            <input type="text" name="cnpj">
+        </div>
+        <div>
+            <span>Endereco: </span>
+            <input type="text" name="endereco" class="t4">
+        </div>
+        <div>
+            <span>Estado: </span>
+            <input type="text" name="estado">
+        </div>
+        <div>
+            <span>Cidade: </span>
+            <input type="text" name="cidade">
+        </div>
+        <div>
+            <span>Responsavel: </span>
+            <input type="text" name="responsavel" class="t3">
+        </div>
+        <div>
+            <span>Contato: </span>
+            <input type="text" name="contato" class="t2">
+        </div>
+        <div>
+            <span>Celular: </span>
+            <input type="text" name="celular">
+        </div>
+        <div>
+            <span>Login: </span>
+            <input type="text" name="login" id="login">
+        </div>
+        <div>
+            <span>Senha: </span>
+            <input type="password" name="senha" id="senha">
+        </div>
+        <div>
+            <span>Pontos de Acesso: </span>
+            <input type="text" name="qtAcesso" class="t05">
+        </div>
+        <div>
+            <input type="hidden" name="action" value="reg">
+            <a href="{URL_ADMIN}/franquia"><img src="{URL_ADMIN}/assets/img/cancel.png"></a>
+            <input type="image" src="{URL_ADMIN}/assets/img/save.png" class="save" alt="salvar">
+        </div>
+    </form>
+</div>

@@ -1,0 +1,225 @@
+<section>
+    <!-- BEGIN FILTRO -->
+    <script>
+        function mostra(id){
+            var div = document.getElementById(id);
+            if(div.style.display == "block"){
+                div.style.display = "none";
+            }else{
+                div.style.display = "block";
+            }
+        }
+    </script>
+    <div class="title" onclick="mostra('vend')" style="cursor:pointer;">Relatorio por Vendedor</div>
+    <div id="vend" style="display:none;">
+        <form action="" method="post">
+            <div>
+                <label>De:</label>
+                <input type="date" name="datebegin" value="{datainicial}">
+                <label>até:</label>
+                <input type="date" name="dateend">
+            </div>
+            <div align="right">
+                <input type="hidden" name="action" value="vend">
+                <input type="image" src="{URL_ADMIN}/assets/img/view.png">
+            </div>
+        </form>
+    </div>
+    <div class="title" onclick="mostra('franq')" style="cursor:pointer;">Relatorio de Franquias customizado</div>
+    <div id="franq" style="display:none;">
+        <form action="" method="post">
+            <div>
+                <label>De:</label>
+                <input type="date" name="datebegin" value="{datainicial}">
+                <label>até:</label>
+                <input type="date" name="dateend">
+            </div>
+            <div>
+                <label>Franquias:</label><br>
+                <select name="franq[]" style="width:300px;" multiple searchable="busque aqui..">
+                    <!-- BEGIN SELECTFRANQUIAS -->
+                    <option value="{id}">{numero} - {franquias}</option>
+                    <!-- END SELECTFRANQUIAS -->
+                  </select>
+            </div>
+            <div align="right">
+                <input type="hidden" name="action" value="franq">
+                <input type="image" src="{URL_ADMIN}/assets/img/view.png">
+            </div>
+        </form>
+    </div>
+    <div class="title" onclick="mostra('filtro1')" style="cursor:pointer;">Relatorio por mes</div>
+    <div id="filtro1" style="display:none;">
+        <form action="" method="post">
+            <div>
+                <label>Mês:</label>
+                <select name="mes">
+                    <option {m01} value="01">Janeiro</option>
+                    <option {m02} value="02">Fevereiro</option>
+                    <option {m03} value="03">Março</option>
+                    <option {m04} value="04">Abril</option>
+                    <option {m05} value="05">Maio</option>
+                    <option {m06} value="06">Junho</option>
+                    <option {m07} value="07">Julho</option>
+                    <option {m08} value="08">Agosto</option>
+                    <option {m09} value="09">Setembro</option>
+                    <option {m10} value="10">Outrubro</option>
+                    <option {m11} value="11">Novembro</option>
+                    <option {m12} value="12">Dezembro</option>
+                </select>
+            </div>
+            <div>
+                <label>Ano:</label>
+                <select name="ano">
+                    <option value="2018">2018</option>
+                    <option value="2019">2019</option>
+                </select>
+            </div>
+            <div align="right">
+                <input type="hidden" name="action" value="filtro1">
+                <input type="image" src="{URL_ADMIN}/assets/img/view.png">
+            </div>
+        </form>
+    </div>
+    <div class="title" onclick="mostra('filtro2')" style="cursor:pointer;">Relatorio por Franquia</div>
+    <div id="filtro2" style="display:none;">
+        <form action="" method="POST">
+            <div>
+                <label></label>
+            </div>
+            <div align="right">
+                <input type="hidden" name="action" value="filtro2">
+                <input type="image" src="{URL_ADMIN}/assets/img/view.png">
+            </div>
+        </form>
+    </div>
+    <!-- END FILTRO -->
+    <!-- BEGIN PORVENDEDOR -->
+    <div class="title" style="text-align: center;">
+        periodo de operação: {dateBegin} até {dateEnd}
+    </div>
+    <table cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+            <th>Codigo</th>
+            <th>Vendedor</th>
+            <th>Vendas</th>
+            <th>Total</th>
+        </tr>
+        <!-- BEGIN PORVENDEDORLIST -->
+        <tr>
+            <td>{codigoVendedor}</td>
+            <td>{nomeVendedor}</td>
+            <td>{totalVendas}</td>
+            <td>{totalVendedor}</td>
+        </tr>
+        <!-- END PORVENDEDORLIST -->
+    </table>
+    <!-- END PORVENDEDOR -->
+    <!-- BEGIN FRANQUIACUSTOM -->
+    <table cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+            <th style="text-align: center !important;">Franquia</th>
+            <th style="text-align: center !important;">Valor total</th>
+            <th style="text-align: center !important;">Comissão</th>
+            <th style="text-align: center !important;">Royalties</th>
+        </tr>
+        <!-- BEGIN FRANQUIACUSTOMLIST -->
+        <tr>
+            <td style="text-align: left !important;">{customName}</td>
+            <td style="text-align: left !important;">{customTotal}</td>
+            <td style="text-align: left !important;">{customComic}</td>
+            <td style="text-align: left !important;">{customRoyal}</td>
+        </tr>
+        <!-- END FRANQUIACUSTOMLIST -->
+    </table>
+    <!-- END FRANQUIACUSTOM -->
+    <!-- BEGIN PORFRANQUIA -->
+    <table cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+            <th style="text-align: center !important;">Número</th>
+            <th style="text-align: center !important;">Franquia</th>
+            <th style="text-align: center !important;">Hoje</th>
+            <th style="text-align: center !important;">Ontem</th>
+            <th style="text-align: center !important;">Ante-Ontem</th>
+            <th style="text-align: center !important;">Mês Atual</th>
+            <th style="text-align: center !important;">Mês Anterior</th>
+            <th style="text-align: center !important;">Anual</th>
+        </tr>
+        <!-- BEGIN FRANQUIA_POR -->
+        <tr>
+            <td class="{css}">{num}</td>
+            <td class="{css}">{nomeFranquia}</td>
+            <td class="{css}" style="text-align: right !important;">{hoje}</td>
+            <td class="{css}" style="text-align: right !important;">{ontem}</td>
+            <td class="{css}" style="text-align: right !important;">{anteOntem}</td>
+            <td class="{css}" style="text-align: right !important; color:green;">{mesAtual}</td>
+            <td class="{css}" style="text-align: right !important;" >{mesAnterior}</td>
+            <td class="{css}" style="text-align: right !important;" >{anual}</td>
+        </tr>
+        <!-- END FRANQUIA_POR -->
+        <tr>
+            <td style="background-color:#cccccc;"></td>
+            <td style="background-color:#cccccc;">Total</td>
+            <td style="background-color:#cccccc;text-align: right !important;">{totalHoje}</td>
+            <td style="background-color:#cccccc;text-align: right !important;">{totalOntem}</td>
+            <td style="background-color:#cccccc;text-align: right !important;">{totalAnteOntem}</td>
+            <td style="background-color:#cccccc;text-align: right !important;">{totalMesAtual}</td>
+            <td style="background-color:#cccccc;text-align: right !important;">{totalMesAnterior}</td>
+            <td style="background-color:#cccccc;text-align: right !important;">{totalAnual}</td>
+        </tr>
+    </table>
+    <!-- END PORFRANQUIA -->
+    <!-- BEGIN PORMES -->
+    <div class="title" style="text-align: center;">
+        periodo de operação: {dataInicio} até {dataFim}
+    </div>
+    <!-- BEGIN FRANQUIA_REPETE -->
+    <hr>
+    <div>
+        <div class="f18 bold" align="center">
+            {franquiaNome}
+        </div>
+        <div align="center">
+            <div style="display: table;">
+                <div class="resumo f12" style="float: left;margin:5px;">
+                    Total de vendas: <br><span class="f18">{totalVenda}</span>
+                </div>
+                <div class="resumo f12" style="float: left;margin:5px;">
+                    Total de comissão: <br><span class="f18">{totalComissao}</span>
+                </div>
+                <div class="resumo f12" style="float: left;margin:5px;">
+                    Total de royalties: <br><span class="f18">{totalRoyalties}</span>
+                </div>
+            </div>
+        </div>
+        <table cellspacing="0" cellpaddding="0" width="100%">
+            <tr>
+                <th align="center">Cliente</th>
+                <th align="center">Produto</th>
+                <th align="center">Data</th>
+                <th align="center">Valor</th>
+                <th align="center">Renovação</th>
+                <th align="center">Comissão</th>
+                <th align="center">Royalties</th>
+            </tr>
+            <!-- BEGIN VAZIO -->
+            <tr>
+                <td colspan="9" align="center">Nenhum registro encontrado.</td>
+            </tr>
+            <!-- END VAZIO -->
+            <!-- BEGIN COMPRA_REPETE -->
+            <tr>
+                <td class="alt">{cliente}</td>
+                <td class="alt">{produto}</td>
+                <td class="alt">{data}</td>
+                <td class="alt">{valor}</td>
+                <td class="alt">{renovacao}</td>
+                <td class="alt">{comissao}</td>
+                <td class="alt">{royalties}</td>
+            </tr>
+            <!-- END COMPRA_REPETE -->
+        </table>
+    </div>
+    <!-- END FRANQUIA_REPETE -->
+    <!-- END PORMES -->
+</section>

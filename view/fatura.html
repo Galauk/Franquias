@@ -1,0 +1,300 @@
+{sucess}
+{errors}
+<script>
+var planos = Array;
+<!-- BEGIN PLANO -->
+planos[{p}] = {plan};
+<!-- END PLANO -->
+</script>
+<script>
+    function valida(){
+        if(document.getElementById("plano1").value == 0 && document.getElementById("plano2").value == 0 && document.getElementById("plano3").value == 0){
+            alert("Escolha um plano para poder gerar a fatura.");
+            document.getElementById("plano1").focus();
+            return false;
+        }
+        if(document.getElementById("qt1").value == 0 && document.getElementById("qt2").value == 0 && document.getElementById("qt3").value == 0){
+            alert("Quantidade do produto tem que ser maior que 0.");
+            document.getElementById("qt1").focus();
+            return false;
+        }
+        if(document.getElementById("cpf").value == ""){
+            alert("CPF precisa ser preechido.");
+            document.getElementById("cpf").focus();
+            return false;
+        }
+        if(document.getElementById("email").value == ""){
+            alert("E-mail precisa ser preechido.");
+            document.getElementById("email").focus();
+            return false;
+        }
+        if(document.getElementById("nome").value == ""){
+            alert("Nome precisa ser preechido.");
+            document.getElementById("nome").focus();
+            return false;
+        }
+        if(document.getElementById("cep").value == ""){
+            alert("CEP precisa ser preechido.");
+            document.getElementById("cep").focus();
+            return false;
+        }
+        if(document.getElementById('cep').value.length < 8){
+            alert("CEP incompleto.");
+            document.getElementById("cep").focus();
+            return false;
+        }
+        if(document.getElementById("numero").value == ""){
+            alert("Numero precisa ser preechido.");
+            document.getElementById("numero").focus();
+            return false;
+        }
+        return true;
+    }
+    function somente_numero(campo) {
+        var digits = "0123456789";
+        var campo_temp;
+        for (var i = 0; i < campo.value.length; i++) {
+            campo_temp = campo.value.substring(i, i + 1)
+            if (digits.indexOf(campo_temp) == -1) {
+                campo.value = campo.value.substring(0, i);
+            }
+        }
+    }
+</script>
+<div>
+    <div class="title">
+        Cadastro de fatura
+    </div>
+</div>
+<div>
+    <form action="#" method="POST" onsubmit=" return valida();">
+        <!-- BEGIN SELECT_VENDEDOR -->
+        <div>
+            <label>Vendedor:</label>
+            <select name="vendedor">
+                <!-- BEGIN VENDEDOR -->
+                <option value="{vendedor_id}">{vendedor}</option>
+                <!-- END VENDEDOR -->
+            </select>
+        </div>
+        <!-- END SELECT_VENDEDOR -->
+        <!-- BEGIN SELECTED_VENDEDOR -->
+        <input type="hidden" name="vendedor" value="{vendedor}">
+        <!-- END SELECTED_VENDEDOR -->
+        <div>
+            <label>Plano:</label>
+            <select name="plano1" id="plano1">
+                <option value="0">Nenhum</option>
+                <!-- BEGIN PLANO1 -->
+                <option value="{p1}">{prod1} - {plan1}</option>
+                <!-- END PLANO1 -->
+            </select>
+            <label>Quantidade:</label>
+            <input type="text" name="qt1" id="qt1" value="0">
+            <label>Desconto:</label>
+            <select name="desc1" id="desc1">
+                <option value="0">0%</option>
+                <option value="5">5%</option>
+                <option value="10">10%</option>
+                <!--
+                    <option value="20">20%</option>
+                    <option value="30">30%</option>
+                -->
+                <!-- BEGIN DESCONTAO1 -->
+                <!-- END DESCONTAO1 -->
+            </select>
+            <label>Renovação:</label>
+            <select name="renovacao1">
+                <option value="S">Sim</option>
+                <option value="N">Não</option>
+            </select>
+            <label id="valor1">Valor: R$ 0.00</label>
+            <label id="desconto1">Desconto: R$ 0.00</label>
+            <label id="total1">Total: R$ 0.00</label>
+            <!--
+            <label>Valor:</label>
+            <input type="text" disabled value="R$ 0,00">
+            -->
+        </div>
+        <div>
+            <label>Plano:</label>
+            <select name="plano2" id="plano2">
+                <option value="0">Nenhum</option>
+                <!-- BEGIN PLANO2 -->
+                <option value="{p2}">{prod2} - {plan2}</option>
+                <!-- END PLANO2 -->
+            </select>
+            <label>Quantidade:</label>
+            <input type="text" name="qt2" id="qt2" value="0">
+            <label>Desconto:</label>
+            <select name="desc2" id="desc2">
+                <option value="0">0%</option>
+                <option value="5">5%</option>
+                <option value="10">10%</option>
+                <!-- 
+                    <option value="20">20%</option>
+                    <option value="30">30%</option>
+                -->
+                <!-- BEGIN DESCONTAO2 -->
+                <!-- END DESCONTAO2 -->
+            </select>
+            <label>Renovação:</label>
+            <select name="renovacao2">
+                <option value="S">Sim</option>
+                <option value="N">Não</option>
+            </select>
+            <label id="valor2">Valor: R$ 0.00</label>
+            <label id="desconto2">Desconto: R$ 0.00</label>
+            <label id="total2">Total: R$ 0.00</label>
+        </div>
+        <div>
+            <label>Plano:</label>
+            <select name="plano3" id="plano3">
+                <option value="0">Nenhum</option>
+                <!-- BEGIN PLANO3 -->
+                <option value="{p3}">{prod3} - {plan3}</option>
+                <!-- END PLANO3 -->
+            </select>
+            <label>Quantidade:</label>
+            <input type="text" name="qt3" id="qt3" value="0">
+            <label>Desconto:</label>
+            <select name="desc3" id="desc3">
+                <option value="0">0%</option>
+                <option value="5">5%</option>
+                <option value="10">10%</option>
+                <!-- 
+                    <option value="20">20%</option>
+                    <option value="30">30%</option>
+                -->
+                <!-- BEGIN DESCONTAO3 -->
+                <!-- END DESCONTAO3 -->
+            </select>
+            <label>Renovação:</label>
+            <select name="renovacao3">
+                <option value="S">Sim</option>
+                <option value="N">Não</option>
+            </select>
+            <label id="valor3">Valor: R$ 0.00</label>
+            <label id="desconto3">Desconto: R$ 0.00</label>
+            <label id="total3">Total: R$ 0.00</label>
+            <!--
+            <label>Valor:</label>
+            <input type="text" disabled value="R$ 0,00">
+            -->
+        </div>
+        <div class="title">Dados do cliente</div>
+        <div>
+            <label>CPF/CNPJ:</label>
+            <input type="text" name="cpf" id="cpf">
+        </div>
+        <div>
+            <label>Email:</label>
+            <input type="text" name="email" id="email">
+        </div>
+        <div>
+            <label>Nome:</label>
+            <input type="text" name="nome" id="nome">
+        </div>
+        <div>
+            <label>Celular:</label>
+            <input type="text" name="celular" id="celular">
+        </div>
+        <div>
+            <label>CEP</label>
+            <input type="text" name="cep" id="cep" onKeyUp="somente_numero(this);"> *somente numeros
+        </div>
+        <div>
+            <label>Endereço:</label>
+            <input type="text" name="endereco" id="endereco">
+        </div>
+        <div>
+            <label>Numero:</label>
+            <input type="text" name="numero" id="numero" onKeyUp="somente_numero(this);">
+        </div>
+        <div>
+            <label>Bairro:</label>
+            <input type="text" name="bairro" id="bairro">
+        </div>
+        <div>
+            <label>Cidade:</label>
+            <input type="text" name="cidade" id="cidade">
+        </div>
+        <div>
+            <label>Estado:</label>
+            <input type="text" name="estado" id="uf">
+        </div>
+        <div>
+            <label>Porque está gerando essa fatura?</label>
+            <textarea name="motivo"></textarea>
+        </div>
+        <div align="right">
+            <input type="hidden" name="action" value="reg">
+            <input type="image" src="{URL_ADMIN}/assets/img/save.png" class="save" alt="salvar">
+        </div>
+    </form>
+</div>
+<script src="{URL_BASE}/js/jquery.min.js"></script>
+<script>
+$("#cep").blur(function(){
+    var cep = this.value.replace(/[^0-9]/, "");
+    if(cep.length!=8){
+        return false;
+    }
+    var url = "//viacep.com.br/ws/"+cep+"/json/";
+    $.getJSON(url, function(dadosRetorno){
+        try{
+        // Insere os dados em cada campo
+        $("#endereco").val(dadosRetorno.logradouro);
+        $("#bairro").val(dadosRetorno.bairro);
+        $("#cidade").val(dadosRetorno.localidade);
+        $("#uf").val(dadosRetorno.uf);
+        }catch(ex){
+            alert("Erro ao carregar informações!");
+        }
+    });
+});
+</script>
+<script>
+function calcula1(){
+    var valor = parseFloat(planos[$("#plano1").val()]);
+    var quantidade = $("#qt1").val();
+    var desconto = ((valor/100)*($("#desc1").val()))*quantidade;
+    var unitario = valor*quantidade;
+    var total = (valor-desconto)*quantidade;
+    $("#valor1").text("Valor: R$"+String(unitario.toFixed(2)));
+    $("#desconto1").text("Desconto: R$"+String(desconto.toFixed(2)));
+    $("#total1").text("Total: R$"+String(total.toFixed(2)));
+}
+$("#plano1").change(calcula1);
+$("#qt1").keyup(calcula1);
+$("#desc1").change(calcula1);
+
+function calcula2(){
+    var valor = parseFloat(planos[$("#plano2").val()]);
+    var quantidade = $("#qt2").val();
+    var desconto = ((valor/100)*($("#desc2").val()))*quantidade;
+    var unitario = valor*quantidade;
+    var total = (valor-desconto)*quantidade;
+    $("#valor2").text("Valor: R$"+String(unitario.toFixed(2)));
+    $("#desconto2").text("Desconto: R$"+String(desconto.toFixed(2)));
+    $("#total2").text("Total: R$"+String(total.toFixed(2)));
+}
+$("#plano2").change(calcula2);
+$("#qt2").keyup(calcula2);
+$("#desc2").change(calcula2);
+
+function calcula3(){
+    var valor = parseFloat(planos[$("#plano3").val()]);
+    var quantidade = $("#qt3").val();
+    var desconto = ((valor/100)*($("#desc3").val()))*quantidade;
+    var unitario = valor*quantidade;
+    var total = (valor-desconto)*quantidade;
+    $("#valor3").text("Valor: R$"+String(unitario.toFixed(2)));
+    $("#desconto3").text("Desconto: R$"+String(desconto.toFixed(2)));
+    $("#total3").text("Total: R$"+String(total.toFixed(2)));
+}
+$("#plano3").change(calcula3);
+$("#qt3").keyup(calcula3);
+$("#desc3").change(calcula3);
+
+</script>

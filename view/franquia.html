@@ -1,0 +1,40 @@
+<div class="title">
+    franquia
+</div>
+<div class="buttons">
+    <a class="button" href="{URL_ADMIN}/franquia/adicionar"><i class="fa fa-plus-square" style="font-size: 30px"></i></a>
+</div>
+<br>
+<div align="center">
+    <table cellspacing="0" cellpadding="0" width="100%">
+        <tr>
+            <th>Número</th>
+            <th>Franquia</th>
+            <th>Nome</th>
+            <th>Contato</th>
+            <th>Celular</th>
+            <th>Login</th>
+            <th>Opções</th>
+        </tr>
+        <!-- BEGIN VAZIO -->
+        <tr>
+            <td colspan="6">Nenhum registro encontrado.</td>
+        </tr>
+        <!-- END VAZIO -->
+        <!-- BEGIN FOREACH -->
+        <tr>
+            <td class="{css}">{numb}</td>
+            <td class="{css}">{franquia}</td>
+            <td class="{css}">{nome}</td>
+            <td class="{css}">{contato}</td>
+            <td class="{css}">{celular}</td>
+            <td class="{css}">{login}</td>
+            <td class="{css}">
+                    <a href="{URL_ADMIN}/franquia/pendencia/{id}"><i class="fa {pendencia}"></i></a>
+                    <a href="{URL_ADMIN}/franquia/add/{id}"><i class="fa {view}"></i></a>
+                    <a href="{URL_ADMIN}/franquia/edit/{id}"><i class="fa fa-edit"></i></a>
+            </td>
+        </tr>
+        <!-- END FOREACH -->
+    </table>
+</div>

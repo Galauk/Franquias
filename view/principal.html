@@ -1,0 +1,191 @@
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+      google.charts.load('current', {'packages':['bar','corechart']});
+
+
+    // Set a callback to run when the Google Visualization API is loaded.
+    google.charts.setOnLoadCallback(drawChart);
+
+    // Callback that creates and populates a data table,
+    // instantiates the pie chart, passes in the data and
+    // draws it.
+    function drawChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Topping');
+        data.addColumn('number', 'Slices');
+        data.addRows([
+            ['Midiagram', {midiagram}],
+            ['Sitexis', {sitexis}],
+            ['Otimizar', {otimizaragora}],
+            ['AgoraLogo', {agoralogo}]
+        ]);
+
+
+        // Set chart options
+        var options = {
+            'title':'Quantidade de compras efetuadas',
+            'width':450,
+            'height':300
+        };
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
+
+
+        /* Grafico 2 */
+
+        var data = google.visualization.arrayToDataTable([
+            ['Compras por Mês', 'MidiaGram', 'Otimizar', 'Sitexis','AgoraLogo'],
+            ['{mes1}', {midiaMes1}, {otimMes1}, {siteMes1}, {agoraMes1}],
+            ['{mes2}', {midiaMes2}, {otimMes2}, {siteMes2}, {agoraMes2}],
+            ['{mes3}', {midiaMes3}, {otimMes3}, {siteMes3}, {agoraMes3}],
+            ['{mes4}', {midiaMes4}, {otimMes4}, {siteMes4}, {agoraMes4}]
+        ]);
+
+        var options = {
+            'title':"Compras efetuadas por mês",
+            'width':450,
+            'height':300,
+        }
+
+        var chart = new google.charts.Bar(document.getElementById('graficoum'));        
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+
+        /* Gráfico 3 */
+        var data = google.visualization.arrayToDataTable([
+            ['Compras por Mês', 'MidiaGram', 'Otimizar', 'Sitexis', 'AgoraLogo'],
+            ['{mes1}', {midiaValorMes1}, {otimValorMes1}, {siteValorMes1}, {agoraValorMes1}],
+            ['{mes2}', {midiaValorMes2}, {otimValorMes2}, {siteValorMes2}, {agoraValorMes2}],
+            ['{mes3}', {midiaValorMes3}, {otimValorMes3}, {siteValorMes3}, {agoraValorMes3}],
+            ['{mes4}', {midiaValorMes4}, {otimValorMes4}, {siteValorMes4}, {agoraValorMes4}]
+        ]);
+
+        var formatter = new google.visualization.NumberFormat({decimalSymbol: ',',groupingSymbol: '.', negativeColor: 'red', negativeParens: true, prefix: 'R$ '});
+        formatter.format(data, 1);
+        formatter.format(data, 2);
+        formatter.format(data, 3);
+        formatter.format(data, 4);
+
+        var options = {
+            pointSize: 4,
+            title: 'Valor das vendas por mês',
+            'width':450,
+            'height':300,
+            hAxis: {title: 'Ano',  titleTextStyle: {color: '#333'}, format:'#########,##'},
+            vAxis: {minValue: 0}
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('graficodois'));
+        chart.draw(data, options);
+
+        /* Grafico 4*/
+        var data = google.visualization.arrayToDataTable([
+            ['Compras por dias', 'MidiaGram', 'Otimizar', 'Sitexis', 'AgoraLogo'],
+            ['{dia1}', {midiaValorDia1}, {otimValorDia1}, {siteValorDia1}, {agoraValorDia1}],
+            ['{dia2}', {midiaValorDia2}, {otimValorDia2}, {siteValorDia2}, {agoraValorDia2}],
+            ['{dia3}', {midiaValorDia3}, {otimValorDia3}, {siteValorDia3}, {agoraValorDia3}],
+            ['{dia4}', {midiaValorDia4}, {otimValorDia4}, {siteValorDia4}, {agoraValorDia4}]
+        ]);
+
+        var formatter = new google.visualization.NumberFormat({decimalSymbol: ',',groupingSymbol: '.', negativeColor: 'red', negativeParens: true, prefix: 'R$ '});
+        formatter.format(data, 1);
+        formatter.format(data, 2);
+        formatter.format(data, 3);
+        formatter.format(data, 4);
+
+        var options = {
+            title: 'Valor de compras por dia',
+            curveType: 'function',
+            width:450,
+            height:300,
+            pointSize: 4,
+            annotation: {
+                1: {
+                    style: 'none'
+                }
+            },
+            legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('graficotres'));
+        chart.draw(data, options);
+
+
+    }
+</script>
+<div class="title">
+    Principal
+</div>
+<!-- BEGIN GRAFICOS -->
+<div class="row justify-content-center">
+    <div class="col-2 resumo text-center">
+        <b class="f12">Total por Dia</b>: <br>R$ {totalDia}
+    </div>
+    <div class="col-2 resumo text-center">
+        <b class="f12">Total por Dia(Ontem)</b>: <br>R$ {totalOntem}
+    </div>
+    <div class="col-2 resumo text-center">
+        <b class="f12">Total por Dia(AnteOntem)</b>: <br>R$ {totalAnteOntem}
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="col-2 resumo text-center">
+        <b class="f12">Total por Dia pelas Franquias</b>: <br>R$ {totalDiaFranq}
+    </div>
+    <div class="col-2 resumo text-center">
+        <b class="f12">Total por Dia pelas Franquias (Ontem)</b>: <br>R$ {totalOntemFranq}
+    </div>
+    <div class="col-2 resumo text-center">
+        <b class="f12">Total por Dia pelas Franquias (AnteOntem)</b>: <br>R$ {totalAnteOntemFranq}
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="col-2 resumo text-center">
+        <b class="f12">Total por Mês</b>: <br>R$ {totalMes}
+    </div>
+    <div class="col-2 resumo text-center">
+        <b class="f12">Total por Ano</b>: <br>R$ {totalAno}
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="col-2 resumo text-center">
+        <b class="f12">Total de franquia no mês</b>: <br>R$ {totalFranq}
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="col-2 resumo text-center">
+        <b class="f12">Total Midiagram(mês)</b>: <br>R$ {midiaValorMes}
+    </div>
+    <div class="col-2 resumo text-center">
+        <b class="f12">Total OtimizarAgora(mês)</b>: <br>R$ {otimValorMes}
+    </div>
+    <div class="col-2 resumo text-center">
+        <b class="f12">Total SiteXis(mês)</b>: <br>R$ {siteValorMes}
+    </div>
+    <div class="col-2 resumo text-center">
+        <b class="f12">Total AgoraLogo(mês)</b>: <br>R$ {agoraValorMes}
+    </div>
+</div>
+
+<div class="row">
+    <div id="chart_div" class="col"></div>
+    <div id="graficoum" class="col"></div>
+</div>
+<div class="row">
+    <div id="graficodois" class="col"></div>
+    <div id="graficotres" class="col"></div>
+</div>
+<!-- END GRAFICOS -->
+<!-- BEGIN AVISOS -->
+<div class="title">
+    Quadro de avisos
+</div>
+<div style="clear:both;"></div>
+<br>
+<div class="f14">
+    {historico}
+</div>
+<!-- END AVISOS -->

@@ -1,0 +1,108 @@
+<section>
+    <script>
+        function checa(id,msg){
+            if(document.getElementById(id).value == ""){
+                alert(msg);
+                document.getElementById(id).focus();
+                return false;
+            }
+            return true;
+        }
+        function ValidaForm(){
+            if(document.getElementById('nome').value == ""){
+                alert("Preencha o nome do Cliente.");
+                document.getElementById('nome').focus();
+                return false;
+            }
+            if(
+                checa('cpf',"Preencha o cpf do Cliente.")
+            ){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        function isNumberKey(evt){
+            var charCode = (evt.which) ? evt.which : event.keyCode
+            if (charCode > 31 && (charCode < 48 || charCode > 57))
+                return false;
+            return true;
+        }
+    </script>
+
+    <div>
+        <div class="title">Adicionar Venda</div>
+        <div class="shadow p-3 mb-5 bg-white rounded">
+            <form action="#" method="POST" onsubmit="return ValidaForm();" class="filtro">
+                <div>
+                    <span>Nome/Razão Social: </span>
+                    <input type="text" name="nome" id="nome" class="t4">
+                </div>
+                <div>
+                    <span>CPF/CNPJ: </span>
+                    <input type="text" name="cpf" id="cpf">
+                </div>
+                <div>
+                    <span>Celular: </span>
+                    <input type="text" name="celular">
+                </div>
+                <div>
+                    <span>E-mail: </span>
+                    <input type="text" name="email" class="t4">
+                </div>
+                <div>
+                    <span>Confirmação de e-mail: </span>
+                    <input type="text" name="email" class="t4">
+                </div>
+                <div>
+                    <span>Cep: </span>
+                    <input type="text" name="cep" onkeypress="return isNumberKey(event)">
+                </div>
+                <div>
+                    <span>Endereço: </span>
+                    <input type="text" name="endereco" class="t4">
+                </div>
+                <div>
+                    <span>Bairro: </span>
+                    <input type="text" name="bairro">
+                </div>
+                <div>
+                    <span>Numero: </span>
+                    <input type="text" name="numero" class="t05" onkeypress="return isNumberKey(event)">
+                </div>
+                <div>
+                    <span>Cidade: </span>
+                    <input type="text" name="cidade" class="t2">
+                </div>
+                <div>
+                    <span>Estado: </span>
+                    <input type="text" name="estado">
+                </div>
+                <div>
+                    <span>Plano: </span>
+                    <select name="plano">
+                        <option value="videonet">VideoNet</option>
+                    </select>
+                </div>
+                <div>
+                    <span>Metodo de pagamento: </span>
+                    <select name="metodo">
+                        <option value="credit_card">Cartão de Credito</option>
+                        <option value="bank_slip">Boleto</option>
+                        <option value="deposit">Deposito</option>
+                        <option value="other_method">Outros</option>
+                    </select>
+                </div>
+                <div>
+                    <span>Valor do pagamento: </span>
+                    <input type="number" name="valor" onkeypress="return isNumberKey(event)" class="t10"> ,00
+                </div>
+                <div>
+                    <input type="hidden" name="action" value="regComp">
+                    <a onclick="history.back();" style="cursor: pointer"><img src="{URL_ADMIN}/assets/img/cancel.png"></a>
+                    <input type="image" src="{URL_ADMIN}/assets/img/save.png" class="save" alt="salvar">
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

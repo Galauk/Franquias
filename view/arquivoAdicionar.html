@@ -1,0 +1,44 @@
+<section>
+    <div class="title">Adicionar Categoria</div>
+    <div>
+    <form action="" method="POST" enctype="multipart/form-data" class="filtro">
+        <div>
+            <label>Categoria:</label>
+            <input type="text" name="categoria">
+        </div>
+        <div>
+            <input type="hidden" name="action" value="regCat">
+            <input type="image" src="{URL_ADMIN}/assets/img/save.png" class="save" alt="salvar">
+        </div>
+        <div style="clear:both;"></div>
+    </form>
+    </div>
+    <hr>
+    <div>
+        <form action="" method="post" enctype="multipart/form-data" class="filtro">
+            <div>
+                <label>Categoria</label>
+                <select name="categoria">
+                    <option value="">Nenhuma</option>
+                    <!-- BEGIN SELECTCATEGORIA -->
+                    <option value="{categoriaid}">{categorianome}</option>
+                    <!-- END SELECTCATEGORIA -->
+                </select>
+            </div>
+            <div>
+                <label>Nome do Arquivo</label>
+                <input type="text" name="nome">
+            </div>
+            <div>
+                <label>Arquivo</label>
+                <input type="file" name="arquivo"> <strong>(Arquivos com maximo de 20Mb)</strong>
+            </div>
+            <div align="right">
+                <input type="hidden" name="action" value="regArq">
+                <input type="image" src="{URL_ADMIN}/assets/img/save.png" class="save" alt="salvar">
+            </div>
+            <div style="clear:both;"></div>
+        </form>
+    </div>
+</section>
+{MATERIAL}

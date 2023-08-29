@@ -1,0 +1,32 @@
+<div>
+    <form action="" method="POST" enctype="multipart/form-data" class="filtro">
+        <div>
+            <span>Mensagem:</span>
+            <textarea name="mensagem" placeholder="aviso a ser passado"></textarea>
+        </div>
+        <div>
+            <span>quem vai ver:</span>
+            <div>
+                <input type="checkbox" name="franquiaVe" value="1"> Franquia
+            </div>
+            <div>
+                <input type="checkbox" name="vendedorVe" value="1"> Vendedor
+            </div>
+        </div>
+        <div align="right">
+            <input type="hidden" name="nome" value="{nome}">
+            <input type="hidden" name="action" value="reg">
+            <input type="image" src="{URL_ADMIN}/assets/img/save.png" class="save" alt="salvar">
+        </div>
+    </form>
+    <br>
+    <hr>
+    <br>
+    <form>
+        <div>
+            <span>Historico:</span>
+            <textarea readonly>{historico}</textarea>
+        </div>
+    </form>
+    <br>
+</div>

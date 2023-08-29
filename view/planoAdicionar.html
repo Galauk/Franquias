@@ -1,0 +1,42 @@
+<div>
+    <div class="title">Adicionar Plano</div>
+    <form action="#" method="POST" enctype="multipart/form-data" class="filtro">
+        <div>
+            <span>Nome: </span>
+            <input type="text" name="nome">
+        </div>
+        <div>
+            <span>Produto: </span>
+            <select name="produto">
+                <!-- BEGIN REPETEPRODUTO -->
+                <option value="{produtoValue}">{produto}</option>
+                <!-- END REPETEPRODUTO -->
+            </select>
+        </div>
+        <div>
+            <span>Identificador:</span>
+            <input type="text" name="identificador" class="t3">
+        </div>
+        <div>
+            <span>Codigo:</span>
+            <input type="text" name="codigo" class="t3">
+        </div>
+        <div>
+            <span>Valor: </span>
+            <input type="text" name="valor" class="t05">
+        </div>
+        <div>
+            <span>Comissão: </span>
+            <input type="text" name="comissao" class="t05">
+        </div>
+        <div>
+            <span>Comissão pela renovação: </span>
+            <input type="text" name="renovacao" class="t05">
+        </div>
+        <div>
+            <input type="hidden" name="action" value="regPlan">
+            <a href="{URL_ADMIN}/plano"><img src="{URL_ADMIN}/assets/img/cancel.png"></a>
+            <input type="image" src="{URL_ADMIN}/assets/img/save.png" class="save" alt="salvar">
+        </div>
+    </form>
+</div>
